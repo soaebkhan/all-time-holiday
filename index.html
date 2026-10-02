@@ -3,74 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Time Holiday | Kashmir Tours</title>
+<title>All Time Holiday | Premium Kashmir Tour Packages</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0} body{font-family:Arial,Helvetica,sans-serif;color:#17324d;background:#f7fafc;line-height:1.6}
-header{position:absolute;top:0;left:0;width:100%;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:20px 7%;color:white}
-.logo{font-size:25px;font-weight:800}.nav a{color:white;text-decoration:none;margin-left:25px;font-weight:600}
-.hero{min-height:650px;display:flex;align-items:center;padding:120px 7% 80px;color:white;background:linear-gradient(90deg,rgba(3,25,42,.82),rgba(3,25,42,.25)),url('https://images.unsplash.com/photo-1566837497312-7be2e3c8a8c2?auto=format&fit=crop&w=1800&q=85') center/cover}
-.hero-content{max-width:650px}.tag{display:inline-block;background:#ffffff22;border:1px solid #ffffff66;padding:8px 14px;border-radius:30px;margin-bottom:18px}
-h1{font-size:clamp(42px,6vw,72px);line-height:1.05;margin-bottom:18px}.hero p{font-size:20px;margin-bottom:28px}
-.btn{display:inline-block;background:#12b76a;color:white;text-decoration:none;padding:14px 24px;border-radius:9px;font-weight:700;border:0;cursor:pointer}.btn.secondary{background:white;color:#17324d;margin-left:10px}
-section{padding:75px 7%}.section-title{text-align:center;font-size:36px;margin-bottom:10px}.section-sub{text-align:center;color:#607487;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;max-width:900px;margin:auto}.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 12px 35px #17324d14}.card img{width:100%;height:230px;object-fit:cover}.card-body{padding:25px}.stars{color:#f2a900;font-weight:bold}.price{font-size:32px;font-weight:800;margin:10px 0 16px}.features{list-style:none;color:#536879;margin-bottom:20px}.features li{margin:7px 0}.features li:before{content:"✓";color:#12b76a;font-weight:bold;margin-right:9px}
-.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}.highlight{background:white;padding:25px;border-radius:15px;text-align:center;box-shadow:0 8px 25px #17324d10}.highlight b{display:block;margin:8px 0}
-.contact{background:#17324d;color:white;text-align:center}.contact h2{font-size:36px;margin-bottom:8px}.contact p{margin-bottom:20px}.wa{background:#12b76a}
-footer{background:#10283b;color:#b9c8d4;text-align:center;padding:22px}
-@media(max-width:700px){header{padding:17px 5%}.nav{display:none}.hero{min-height:600px;padding:110px 5% 60px}.hero p{font-size:17px}section{padding:55px 5%}.cards,.highlights{grid-template-columns:1fr}.btn.secondary{margin:10px 0 0 0}.section-title{font-size:30px}}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#0f766e;--primary-dark:#0d5e56;--accent:#f59e0b;--dark:#0f172a;--gray-light:#f8fafc;--text:#334155}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:#fff;line-height:1.6;scroll-behavior:smooth}
+
+/* Header & Nav */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:16px 8%;background:rgba(15,23,42,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.1)}
+.logo{font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px}
+.logo span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{color:#e2e8f0;text-decoration:none;font-weight:500;font-size:15px;transition:0.2s}
+.nav a:hover{color:var(--accent)}
+.nav-btn{background:var(--primary);color:#fff!important;padding:8px 18px;border-radius:20px;font-weight:600!important}
+
+/* Hero Section */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 8% 80px;color:white;background:linear-gradient(180deg,rgba(15,23,42,0.7) 0%,rgba(15,23,42,0.85) 100%),url('https://images.unsplash.com/photo-1566837497312-7be2e3c8a8c2?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat fixed}
+.hero-content{max-width:700px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.4);color:var(--accent);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:600;margin-bottom:20px}
+h1{font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-1px}
+.hero p{font-size:18px;color:#cbd5e1;margin-bottom:32px;max-width:580px}
+.hero-btns{display:flex;gap:15px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--primary);color:white;text-decoration:none;padding:14px 28px;border-radius:12px;font-weight:700;font-size:15px;transition:0.3s;box-shadow:0 4px 14px rgba(15,118,110,0.39)}
+.btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-wa{background:#25d366;box-shadow:0 4px 14px rgba(37,211,102,0.3)}
+.btn-wa:hover{background:#1da851}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.3);color:white;box-shadow:none}
+.btn-outline:hover{background:white;color:var(--dark)}
+
+/* Features Bar */
+.trust-bar{background:var(--dark);padding:25px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border-bottom:1px solid rgba(255,255,255,0.05)}
+.trust-item{display:flex;align-items:center;gap:12px;color:#94a3b8;font-size:14px}
+.trust-item b{color:#fff;display:block;font-size:15px}
+
+/* Packages */
+section{padding:90px 8%}
+.section-header{text-align:center;max-width:650px;margin:0 auto 50px}
+.section-title{font-size:36px;font-weight:800;color:var(--dark);letter-spacing:-0.5px;margin-bottom:12px}
+.section-sub{color:#64748b;font-size:16px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1100px;margin:auto}
+.card{background:white;border-radius:20px;border:1px solid #e2e8f0;overflow:hidden;transition:0.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+.card-img{position:relative;height:220px}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-tag{position:absolute;top:15px;right:15px;background:rgba(15,23,42,0.8);color:#fff;backdrop-filter:blur(4px);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.card-body{padding:28px;display:flex;flex-direction:column;flex-grow:1}
+.stars{color:var(--accent);font-size:14px;margin-bottom:6px;font-weight:700}
+.card-title{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.price-box{margin:15px 0 20px;display:flex;align-items:baseline;gap:8px}
+.price-label{font-size:13px;color:#64748b}
+.price{font-size:32px;font-weight:800;color:var(--primary)}
+.price-unit{font-size:13px;color:#64748b}
+
+.highlights-list{list-style:none;margin-bottom:25px;border-top:1px solid #f1f5f9;padding-top:15px}
+.highlights-list li{margin:10px 0;font-size:14px;color:#475569;display:flex;align-items:center;gap:10px}
+.highlights-list li::before{content:"✓";color:var(--primary);font-weight:bold;background:#ccfbf1;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px}
+
+/* Itinerary Highlights */
+.itinerary{background:var(--gray-light)}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:auto}
+.time-box{background:white;padding:24px;border-radius:16px;border:1px solid #e2e8f0;position:relative}
+.time-box span{background:var(--primary);color:white;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;display:inline-block;margin-bottom:10px}
+.time-box h4{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.time-box p{font-size:13px;color:#64748b}
+
+/* Inclusions & Exclusions */
+.inc-exc{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1000px;margin:auto}
+.inc-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:30px;border-radius:20px}
+.exc-box{background:#fef2f2;border:1px solid #fecaca;padding:30px;border-radius:20px}
+.inc-box h3{color:#166534;margin-bottom:15px;font-size:18px}
+.exc-box h3{color:#991b1b;margin-bottom:15px;font-size:18px}
+.inc-box ul,.exc-box ul{list-style:none}
+.inc-box li,.exc-box li{font-size:14px;margin:10px 0;display:flex;align-items:center;gap:10px}
+.inc-box li::before{content:"✓";color:#166534;font-weight:bold}
+.exc-box li::before{content:"✕";color:#991b1b;font-weight:bold}
+
+/* Contact CTA */
+.contact-cta{background:var(--dark);color:white;text-align:center;border-radius:24px;max-width:1100px;margin:0 auto 90px;padding:60px 20px;position:relative;overflow:hidden}
+.contact-cta h2{font-size:32px;font-weight:800;margin-bottom:10px}
+.contact-cta p{color:#94a3b8;margin-bottom:30px}
+
+/* Footer & Sticky CTA */
+footer{background:#090d16;color:#64748b;text-align:center;padding:30px 8%;font-size:14px}
+.sticky-bar{position:fixed;bottom:0;left:0;width:100%;background:white;border-top:1px solid #e2e8f0;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;z-index:999;box-shadow:0 -5px 20px rgba(0,0,0,0.05)}
+.sticky-info b{display:block;color:var(--dark);font-size:15px}
+.sticky-info span{font-size:12px;color:#64748b}
+.sticky-btns{display:flex;gap:10px}
+
+@media(max-width:768px){
+.nav{display:none}
+header{padding:14px 5%}
+section{padding:60px 5%}
+.hero{padding:120px 5% 60px}
+.sticky-info{display:none}
+.sticky-btns{width:100%}
+.sticky-btns a{flex:1;padding:10px 14px;font-size:13px}
+}
 </style>
 </head>
 <body>
+
 <header>
-<div class="logo">All Time Holiday</div>
-<nav class="nav"><a href="#home">Home</a><a href="#packages">Tour Packages</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+<div class="logo">🏔️ All Time <span>Holiday</span></div>
+<nav class="nav">
+<a href="#home">Home</a>
+<a href="#packages">Packages</a>
+<a href="#itinerary">Itinerary</a>
+<a href="#inclusions">Inclusions</a>
+<a class="nav-btn" href="tel:917359871009">📞 Call Us</a>
+</nav>
 </header>
 
 <main id="home">
 <section class="hero">
 <div class="hero-content">
-<div class="tag">🇮🇳 Explore India with us</div>
-<h1>Explore Kashmir</h1>
-<p>Discover the Paradise on Earth with comfortable stays, beautiful sightseeing and memorable journeys.</p>
-<a class="btn" href="#packages">View Packages</a>
-<a class="btn secondary" href="https://wa.me/917359871009?text=Hello%20All%20Time%20Holiday,%20I%20want%20to%20enquire%20about%20the%20Kashmir%20tour." target="_blank">WhatsApp Us</a>
+<div class="badge">✨ Verified Local Kashmir Experts</div>
+<h1>Experience Kashmir – The Paradise on Earth</h1>
+<p>Customized 5 Days / 4 Nights Kashmir Tour Packages with Premium Hotels, Private Transport, Shikara Ride & Delicious Meals.</p>
+<div class="hero-btns">
+<a class="btn" href="#packages">Explore Packages</a>
+<a class="btn btn-wa" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20want%20to%20plan%20a%20Kashmir%20trip." target="_blank">WhatsApp Kalim Bhai</a>
+</div>
 </div>
 </section>
+
+<div class="trust-bar">
+<div class="trust-item">🏨 <div><b>Top Rated Hotels</b>Deluxe & Super Deluxe Stays</div></div>
+<div class="trust-item">🚗 <div><b>Private Cab Transfer</b>Srinagar to Srinagar Transfers</div></div>
+<div class="trust-item">🚣 <div><b>Free Shikara Ride</b>1 Hour Lake Experience</div></div>
+<div class="trust-item">📞 <div><b>24/7 Local Support</b>Managed by Kalim Bhai</div></div>
+</div>
 
 <section id="packages">
-<h2 class="section-title">Kashmir Tour Packages</h2>
-<p class="section-sub">Choose the hotel category that suits your travel plan.</p>
+<div class="section-header">
+<h2 class="section-title">Best Kashmir Tour Packages</h2>
+<p class="section-sub">Choose your preferred hotel category. All packages include Meals, Cabs, and Sightseeing.</p>
+</div>
+
 <div class="cards">
+
+<!-- 2 Star Package -->
 <article class="card">
-<img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=85" alt="Kashmir">
-<div class="card-body"><div class="stars">⭐⭐ 2 Star Package</div><div class="price">₹10,500</div>
-<ul class="features"><li>Hotel accommodation</li><li>Kashmir sightseeing</li><li>Travel assistance</li><li>Comfortable journey</li></ul>
-<a class="btn" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20am%20interested%20in%20the%20Kashmir%202%20Star%20package%20of%20Rs.%2010,500." target="_blank">Enquire Now</a></div>
+<div class="card-img">
+<img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=85" alt="Kashmir Budget Tour">
+<span class="card-tag">Budget Special</span>
+</div>
+<div class="card-body">
+<div class="stars">⭐⭐ Standard Package</div>
+<h3 class="card-title">Deluxe Kashmir Tour</h3>
+<p style="font-size: 13px; color: #64748b;">Perfect for budget travellers & group tours.</p>
+<div class="price-box">
+<span class="price-label">Starting at</span>
+<span class="price">₹10,500</span>
+<span class="price-unit">/ Per Person</span>
+</div>
+<ul class="highlights-list">
+<li>4 Nights Accommodation (Srinagar + Houseboat)</li>
+<li>Daily Breakfast & Dinner Included</li>
+<li>Private Sedan/Innova for All Sightseeing</li>
+<li>1 Hour Complimentary Shikara Ride</li>
+<li>Toll Taxes, Parking & Driver Charges</li>
+</ul>
+<a class="btn btn-wa" style="width: 100%;" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20want%20to%20book%20the%202%20Star%20Kashmir%20Package%20(Rs.%2010,500)." target="_blank">Book 2-Star Package</a>
+</div>
 </article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?auto=format&fit=crop&w=1000&q=85" alt="Kashmir mountains">
-<div class="card-body"><div class="stars">⭐⭐⭐ 3 Star Package</div><div class="price">₹14,000</div>
-<ul class="features"><li>3 star hotel accommodation</li><li>Kashmir sightseeing</li><li>Travel assistance</li><li>Comfortable journey</li></ul>
-<a class="btn" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20am%20interested%20in%20the%20Kashmir%203%20Star%20package%20of%20Rs.%2014,000." target="_blank">Enquire Now</a></div>
+
+<!-- 3 Star Package -->
+<article class="card" style="border: 2px solid var(--primary);">
+<div class="card-img">
+<img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?auto=format&fit=crop&w=800&q=85" alt="Kashmir Premium Tour">
+<span class="card-tag" style="background: var(--primary);">Most Popular</span>
+</div>
+<div class="card-body">
+<div class="stars">⭐⭐⭐ Super Deluxe Package</div>
+<h3 class="card-title">Premium Kashmir Tour</h3>
+<p style="font-size: 13px; color: #64748b;">Best for Families, Couples & Honeymooners.</p>
+<div class="price-box">
+<span class="price-label">Starting at</span>
+<span class="price">₹14,000</span>
+<span class="price-unit">/ Per Person</span>
+</div>
+<ul class="highlights-list">
+<li>3 Star Premium Hotels & Luxury Houseboat Stay</li>
+<li>Daily Buffet Breakfast & Dinner</li>
+<li>Private SUV Vehicle (Etios/Dzire/Innova)</li>
+<li>Srinagar, Gulmarg, Pahalgam & Sonmarg Tours</li>
+<li>Honeymoon Inclusions (Flower Decor/Cake on Request)</li>
+</ul>
+<a class="btn" style="width: 100%;" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20want%20to%20book%20the%203%20Star%20Kashmir%20Package%20(Rs.%2014,000)." target="_blank">Book 3-Star Package</a>
+</div>
 </article>
+
 </div>
 </section>
 
-<section id="about">
-<h2 class="section-title">Travel with All Time Holiday</h2>
-<p class="section-sub">We help you discover memorable destinations across India with comfortable travel options and friendly assistance.</p>
-<div class="highlights">
-<div class="highlight">🏨<b>Hotel Stay</b>Comfortable accommodation options.</div>
-<div class="highlight">📍<b>Sightseeing</b>Discover beautiful destinations.</div>
-<div class="highlight">🤝<b>Travel Assistance</b>Support for your journey.</div>
+<section id="itinerary" class="itinerary">
+<div class="section-header">
+<h2 class="section-title">5 Days Sample Tour Itinerary</h2>
+<p class="section-sub">A carefully crafted plan to help you experience Kashmir completely.</p>
+</div>
+
+<div class="timeline">
+<div class="time-box">
+<span>Day 1</span>
+<h4>Srinagar Arrival & Houseboat Stay</h4>
+<p>Pickup from Airport, transfer to Luxury Houseboat. Enjoy 1-Hour Evening Shikara Ride on Dal Lake.</p>
+</div>
+<div class="time-box">
+<span>Day 2</span>
+<h4>Srinagar Local Sightseeing</h4>
+<p>Visit Mughal Gardens, Nishat Bagh, Shalimar Bagh, Pari Mahal & Shankaracharya Temple.</p>
+</div>
+<div class="time-box">
+<span>Day 3</span>
+<h4>Srinagar to Gulmarg Day Trip</h4>
+<p>Explore snow peaks, world's highest Gondola Cable Car Ride, and Meadow of Flowers.</p>
+</div>
+<div class="time-box">
+<span>Day 4</span>
+<h4>Pahalgam (Valley of Shepherds)</h4>
+<p>Visit Betaab Valley, Aru Valley, and Chandanwari along the scenic Lidder River.</p>
+</div>
+<div class="time-box">
+<span>Day 5</span>
+<h4>Departure from Srinagar</h4>
+<p>Drop at Srinagar Airport with sweet memories of Kashmir.</p>
+</div>
 </div>
 </section>
 
-<section id="contact" class="contact">
-<h2>Plan Your Kashmir Trip</h2><p>For booking and enquiries, contact Kalim Bhai.</p>
-<a class="btn wa" href="https://wa.me/917359871009?text=Hello%20All%20Time%20Holiday,%20I%20want%20to%20book%20a%20Kashmir%20tour." target="_blank">WhatsApp Kalim Bhai • 7359871009</a>
+<section id="inclusions">
+<div class="section-header">
+<h2 class="section-title">What's Included & Excluded</h2>
+</div>
+
+<div class="inc-exc">
+<div class="inc-box">
+<h3>Inclusions (Included)</h3>
+<ul>
+<li>Hotel Accommodation (Srinagar + Houseboat)</li>
+<li>Daily Breakfast & Dinner at Hotels</li>
+<li>Private Dedicated Vehicle for all 5 Days</li>
+<li>1 Hour Dal Lake Shikara Ride</li>
+<li>Airport Pick & Drop Service</li>
+<li>Toll Tax, Driver Allowance, Fuel & Taxes</li>
+</ul>
+</div>
+<div class="exc-box">
+<h3>Exclusions (Not Included)</h3>
+<ul>
+<li>Flight or Train Tickets</li>
+<li>Gondola Ride / Pony Charges in Gulmarg</li>
+<li>Local Union Taxi in Pahalgam (Aru/Betaab)</li>
+<li>Personal expenses, laundry, tips</li>
+<li>Entry tickets to Mughal Gardens</li>
+</ul>
+</div>
+</div>
 </section>
+
+<div class="contact-cta">
+<h2>Need a Custom Tour Plan or Discounts?</h2>
+<p>Speak directly with Kalim Bhai for custom dates, extra person pricing, and special honeymoon deals.</p>
+<a class="btn btn-wa" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20need%20a%20customized%20Kashmir%20tour%20package." target="_blank">Chat with Kalim Bhai on WhatsApp</a>
+</div>
+
 </main>
-<footer>© 2026 All Time Holiday. All rights reserved.</footer>
+
+<footer>
+<p>© 2026 All Time Holiday. Managed by Kalim Bhai (Contact: 7359871009). All Rights Reserved.</p>
+</footer>
+
+<!-- Bottom Mobile Action Bar -->
+<div class="sticky-bar">
+<div class="sticky-info">
+<b>All Time Holiday</b>
+<span>Kashmir Tour Enquiries</span>
+</div>
+<div class="sticky-btns">
+<a class="btn btn-outline" style="color:var(--dark); border-color:#cbd5e1;" href="tel:917359871009">📞 Call Kalim Bhai</a>
+<a class="btn btn-wa" href="https://wa.me/917359871009?text=Hello%20Kalim%20Bhai,%20I%20want%20to%20enquire%20about%20Kashmir%20Tour." target="_blank">💬 WhatsApp</a>
+</div>
+</div>
+
 </body>
 </html>
